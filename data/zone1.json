@@ -1,0 +1,13 @@
+{
+  "instructions": {
+    "firstLine": "Zone 1",
+    "secondLine": "Can you guess the location of each station?"
+  },
+  "stations":
+  {
+    "dlr040": {
+      "name": "Lewisham",
+      "html": "Lewisham<ul class=\"rail-symbol\"><li class=\"hor\"></li><li class=\"hor2\"></li><li class=\"diag\"></li><li class=\"diag2\"></li><li class=\"diag3\"></li></ul>"
+    }
+  }
+}
