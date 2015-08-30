@@ -1,0 +1,41 @@
+<div class="main-page-background"></div>
+  <div class="main-page-overlay"></div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="home-welcome">
+        <img class="underground-main-logo" src="images/underground.png" title="Underground Logo">
+        <h1>Tube Guru</h1>
+        <p>It is time to impress your friends and finally learn where all those odd and funny Unerground (and Overground) stations are.</p>
+        <p>From Cockfosters to Brixton, from Ealing Broadway to Beckton</p>
+        <button class="btn btn-lg btn-success btn-home-start" ng-click="start=true" ng-hide="start">Start!</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div ng-show="start" class="game-options">
+        <div class="list-group">
+          <a href="/#game" class="list-group-item" ng-click="selectGame('MapOnly')">
+            <h4 class="list-group-item-heading">Map Only</h4>
+            <p class="list-group-item-text">Just show tube map - no game nonsense please.</p>
+          </a>
+          <a href="/#game" ng-click="selectGame('zone1')" class="list-group-item">
+            <h4 class="list-group-item-heading">Zone 1</h4>
+            <p class="list-group-item-text">Prove you know all the stations in central London.</p>
+          </a>
+          <a class="list-group-item">
+            <h4 class="list-group-item-heading">All Zones</h4>
+            <p class="list-group-item-text">Ready to take the ultimate challenge? Tackle the entire London tube map!</p>
+          </a>
+          <a class="list-group-item disabled">
+            <h4 class="list-group-item-heading">Line by Line</h4>
+            <p class="list-group-item-text">Concentrate on one line at a time. (coming soon)</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>

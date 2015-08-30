@@ -1,0 +1,289 @@
+/*
+  Allow angular.js to be loaded in body, hiding cloaked elements until
+  templates compile.  The !important is important given that there may be
+  other selectors that are more specific or come later and might alter display.
+ */
+
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+.navbar-game-info-container {
+  margin-top: 4px;
+}
+
+.question-progress-bar {
+  margin-top: 11px;
+  margin-left: 20px;
+  width: 150px;
+}
+
+.question-progress-bar .progress {
+  margin-bottom: 0px;
+  background-color: #AFAEAE;
+}
+
+.progress {
+  border-radius: 3px;
+}
+
+.view-with-navbar {
+  padding-top: 50px;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main page design */
+.main-page-background {
+  position: fixed;
+  background-image: url("../images/tube-background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  height: 100%;
+  width: 100%;
+}
+
+.main-page-overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 66%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.75)), color-stop(66%,rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0.75) 0%,rgba(0,0,0,0) 66%);
+  background: -o-linear-gradient(top,  rgba(0,0,0,0.75) 0%,rgba(0,0,0,0) 66%);
+  background: -ms-linear-gradient(top,  rgba(0,0,0,0.75) 0%,rgba(0,0,0,0) 66%);
+  background: linear-gradient(to bottom,  rgba(0,0,0,0.75) 0%,rgba(0,0,0,0) 66%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf000000', endColorstr='#00000000',GradientType=0 );
+}
+
+.home-welcome {
+  width: 100%;
+  text-align: center;
+  text-rendering: optimizelegibility;
+  text-shadow: 0 0 2px rgba(0,0,0,.8);
+  color: #fff;
+}
+
+.home-welcome h1 {
+  margin-top: 0px;
+  width: 100%;
+  font-size: 500%;
+}
+
+.underground-main-logo {
+  padding-top: 10%;
+}
+
+.home-welcome p {
+  font-size: 120%;
+}
+
+
+.btn-home-start, .game-options  {
+  margin-top: 20px;
+}
+
+.game-options {
+  color: #fff
+}
+
+.game-options a {
+  cursor: pointer;
+}
+
+
+
+/* Map container related styling */
+
+.fix-sized-map-area {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#map-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+}
+#scaled-map-frame {
+  width: 4124px;
+  height: 2845px;
+  border: 0px;
+  zoom: 0.30;
+  -moz-transform: scale(0.30);
+  -o-transform: scale(0.30);
+  -webkit-transform: scale(0.30);
+
+
+  -moz-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+
+
+  -webkit-transition: -moz-transform .3s ease-out;
+  -moz-transition: -webkit-transform .3s ease-out;
+  transition: transform .3s ease-out;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  #scaled-map-frame  { zoom: 1;  }
+}
+
+#map-container *, *:before, *:after {
+  -webkit-box-sizing: initial;
+  -moz-box-sizing: initial;
+  box-sizing: initial;
+}
+
+
+/* Map zooming related styling */
+
+#zoom-button-group {
+  z-index: 100;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 32px;
+  height: 80px;
+}
+
+.btn-zoom {
+  font-size: 20px;
+  line-height: 1;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.3);
+}
+
+
+
+/* Game panel related styling */
+
+.game-panel {
+  position: fixed;
+  top: 60px;
+  right: 30px;
+  width: 400px;
+  height: 100px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 1px 4px rgba(0,0,0,0.3);
+  background-color: #ffffff;
+
+}
+
+.welcome-message {
+  height: 100%;
+}
+
+.welcome-left {
+  float: left;
+}
+
+.welcome-right {
+  float: left;
+  height: 100%;
+}
+
+.btn-start {
+  position: relative;
+  top: 50%;
+  left: 22px;
+  transform: translateY(-50%);
+}
+
+.question-text {
+  margin-top: 0px;
+}
+
+.answer-message {
+  font-size: 160%;
+  font-weight: bold;
+  line-height: 100px;
+  text-align: center;
+  position: absolute;
+  width:400px;
+  height: 100px;
+  left:50%;
+  top: 0px;
+  margin-left:-200px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.answer-message-wrong {
+  background-color: #ff2b00;
+}
+
+.answer-message-correct {
+  background-color: #5cb85c;
+}
+
+.time-display, .tries-display, .points-display {
+  position: absolute;
+  color: #777;
+}
+
+.tries-display {
+  left: 3px;
+  top: 3px;
+}
+
+.time-display {
+  right: 3px;
+  top: 3px;
+}
+
+.points-display {
+  left: 3px;
+  bottom: 3px;
+}
+
+
+/* finished modal */
+
+.finished-title {
+  float: none;
+  text-align: center;
+}
+.score-number{
+  text-align: center;
+  font-size: 400%;
+  float: none;
+}
+
+.finished-btn-container {
+  text-align: center;
+  width: 100%;
+}
+.finished-btn {
+  text-align: center;
+}

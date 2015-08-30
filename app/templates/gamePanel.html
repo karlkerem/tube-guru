@@ -1,0 +1,36 @@
+
+<div ng-show="gameEngine.gameStatus===STATUS.READY" class="welcome-message">
+  <div class="welcome-left">
+    <h3>{{firstLineInstructions}}</h3>
+    <span>{{secondLineInstructions}}</span>
+  </div>
+  <div class="welcome-right">
+    <button class="btn btn-success btn-start" ng-click="start()">Start!</button>
+  </div>
+</div>
+
+
+<div ng-show="gameEngine.gameStatus===STATUS.WAITING_FOR_ANSWER" class="question-panel">
+  <h4 class="text-center">Where is:</h4>
+  <h3 class="text-center question-text">{{gameEngine.currentQuestion.name}}</h3>
+</div>
+
+<div ng-show="gameEngine.gameStatus===STATUS.WAITING_FOR_ANSWER" class="tries-display">
+  <tries-display></tries-display>
+</div>
+
+<div ng-show="gameEngine.gameStatus===STATUS.WAITING_FOR_ANSWER" class="time-display">
+  <time-display></time-display>
+</div>
+
+<div ng-show="gameEngine.gameStatus===STATUS.WAITING_FOR_ANSWER" class="points-display">
+  <points-display></points-display>
+</div>
+
+<div ng-show="gameEngine.questionStatus===QUESTION_STATUS.WRONG" class="answer-message answer-message-wrong ng-cloak">
+  Wrong Answer!
+</div>
+
+<div ng-show="gameEngine.questionStatus===QUESTION_STATUS.CORRECT" class="answer-message answer-message-correct ng-cloak">
+  Correct!
+</div>

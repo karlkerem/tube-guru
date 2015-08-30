@@ -1,0 +1,25 @@
+{
+  "instructions": {
+    "firstLine": "Zone 1",
+    "secondLine": "Can you guess the location of each station?"
+  },
+  "stations":
+  {
+    "dlr040": {
+      "name": "Lewisham",
+      "html": "Lewisham<ul class=\"rail-symbol\"><li class=\"hor\"></li><li class=\"hor2\"></li><li class=\"diag\"></li><li class=\"diag2\"></li><li class=\"diag3\"></li></ul>"
+    },
+    "dlr041": {
+      "name": "Tower Gateway",
+      "html": "<br>Tower<br>Gateway"
+    },
+    "emi015": {
+      "name": "Emirates Royal Docks",
+      "html": "Emirates<br>Royal Docks<ul class=\"cross-symbol\"><li class=\"hor\"></li><li class=\"vert\"></li></ul>"
+    },
+    "emi016": {
+      "name": "Emirates Greenwich Peninsula",
+      "html": "Emirates<br>Greenwich<br>Peninsula<ul class=\"cross-symbol\"><li class=\"hor\"></li><li class=\"vert\"></li></ul>"
+    }
+  }
+}
