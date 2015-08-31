@@ -1,6 +1,6 @@
 #piccadilly .route,
 #piccadilly .station{
-    background-color: #1c3f95; 
+    background-color: #1c3f95;
     z-index: 10;
 }
 #pic001{
@@ -236,7 +236,7 @@
 #pic040 strong{
 	width: 124px;
 	margin-left: -62px;
-	top: -94px;
+	top: -108px;
 }
 #pic040 .rail-symbol{
 	top: -16px;

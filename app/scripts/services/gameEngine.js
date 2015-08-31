@@ -92,6 +92,7 @@ angular.module('tubeGuruApp')
         }
         else {
           //time is up, let's move on to next question
+          gameEngine.data.previousQuestion = gameEngine.data.currentQuestion;
           getQuestion();
         }
       }, 1000);
