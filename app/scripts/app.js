@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'ui.bootstrap',
     'angulartics',
-    'angulartics.google.analytics'
+    'angulartics.google.analytics',
+    'angulike'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -51,4 +52,9 @@ angular
     'WAITING': 'waiting',
     'CORRECT': 'correct',
     'WRONG': 'wrong'
-  });
+  })
+  .run([
+    '$rootScope', function ($rootScope) {
+      $rootScope.facebookAppId = '998898586799946'; // set your facebook app id here
+    }
+  ]);

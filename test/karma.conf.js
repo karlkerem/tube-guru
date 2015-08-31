@@ -47,6 +47,7 @@ module.exports = function(config) {
       'bower_components/angulartics/src/angulartics-inspectlet.js',
       'bower_components/angulartics/src/angulartics-newrelic-insights.js',
       'bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
+      'bower_components/angulike/angulike.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

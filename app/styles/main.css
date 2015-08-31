@@ -197,15 +197,18 @@
   box-sizing: initial;
 }
 
-.share-buttons-footer {
-  bottom: 10px;
-  z-index: 1;
+.share-buttons-home-page{
+  top: 20px;
+  z-index: 3;
   position: fixed;
   left: 50%;
   margin-left: -170px;
   width: 340px;
 }
 
+#u_0_3 {
+  color: #EFEFEF;
+}
 
 /* Map container related styling */
 
