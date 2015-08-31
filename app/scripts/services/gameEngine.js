@@ -22,13 +22,14 @@ angular.module('tubeGuruApp')
       gameStatus: STATUS.MAP_ONLY,
       questionStatus: QUESTION_STATUS.WAITING,
       noOfQuestions: 0,
+      noOfQuestionsTitle: "",
       currentQuestionNo: 0,
       pointsAvailableForCurrentQuestion: 0,
       noOfTries: 1,
       timeLeft: 0 //in seconds
     };
 
-    this.selectGame = function(gameId) {
+    this.selectGame = function(gameId, noOfQuestions) {
       resetVariables();
       switch(gameId) {
         case "MapOnly":
@@ -45,9 +46,9 @@ angular.module('tubeGuruApp')
 
       }
       gameEngine.noOfTriesAllowed = game.getNoOfTriesAllowed();
-      game.initLocalData(function(allQuestions) {
-        gameEngine.data.noOfQuestions = Object.keys(allQuestions).length;
-      });
+      gameEngine.data.noOfQuestions = noOfQuestions.number;
+      gameEngine.data.noOfQuestionsTitle = noOfQuestions.title;
+      game.initLocalData();
     };
 
 

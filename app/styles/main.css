@@ -96,6 +96,17 @@
   font-size: 500%;
 }
 
+.home-welcome-message {
+  height: 134px;
+  overflow: hidden;
+  transition: all ease-out 0.3s;
+}
+
+.home-welcome-message.ng-hide {
+  height:0;
+  opacity: 0;
+}
+
 .underground-main-logo {
   padding-top: 10%;
 }
@@ -105,18 +116,70 @@
 }
 
 
-.btn-home-start, .game-options  {
+.btn-home-start  {
   margin-top: 20px;
 }
 
+.game-options-container {
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+}
+
 .game-options {
-  color: #fff
+  color: #fff;
+  transition: all ease-out 0.3s;
+  position: absolute;
+  top: 20px;
+  left: 0%;
+  padding-right: 15px;
+  display: inline-table;
+  width: 100%;
+}
+
+.game-options.ng-hide-remove {
+  display: block!important;
+}
+
+.game-options-slide-left {
+  left: -100%;
 }
 
 .game-options a {
   cursor: pointer;
 }
 
+.game-options-second-page .list-group-item-title,
+.game-options-second-page .list-group-item-title:hover{
+  cursor: auto;
+  color: #ffffff;
+  background-color: #0723A5;
+}
+
+.game-options-second-page .list-group-item-title .list-group-item-heading {
+  color: #ffffff;
+}
+
+.game-options-second-page .second-page-item-text {
+  font-size: 18px;
+}
+
+.game-options-second-page {
+  transition: all ease-out 0.3s;
+  position: absolute;
+  top: 20px;
+  left: 0%;
+  padding-right: 15px;
+  display: inline-table;
+  width: 100%;
+}
+
+.game-options-second-page.ng-hide-remove {
+  display: inline-table!important;
+}
+.game-options-second-page.ng-hide {
+  left: 100%;
+}
 
 
 /* Map container related styling */

@@ -8,12 +8,23 @@
  * Controller of the tubeGuruApp
  */
 angular.module('tubeGuruApp')
-  .controller('MainCtrl', function ($scope, gameEngineService) {
+  .controller('MainCtrl', function ($scope, gameEngineService, stationDataService) {
+    $scope.start = 'startButton';
 
     $scope.selectGame = function(gameId) {
-      gameEngineService.selectGame(gameId);
+      $scope.gameId = gameId;
+
+      stationDataService.getData(gameId, function(data) {
+        $scope.noOfStationsOptions = data.noOfStationsOptions;
+        $scope.gameName = data.instructions.firstLine;
+        $scope.start = 'secondPage';
+      });
+
     };
 
+    $scope.selectNoOfStationsOptions = function(noOfStations) {
+      gameEngineService.selectGame($scope.gameId, noOfStations);
+    };
 
 
   });

@@ -33,7 +33,7 @@ angular.module('tubeGuruApp')
     this.initLocalData = function(callback) {
       stationDataService.getData(dataFileName, function(data) {
         localData = data.stations;
-        callback(data.stations);
+        if(callback){ callback(data.stations); }
       });
     };
 
