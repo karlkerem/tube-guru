@@ -16,7 +16,9 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.bootstrap'
+    'ui.bootstrap',
+    'angulartics',
+    'angulartics.google.analytics'
   ])
   .config(function ($routeProvider) {
     $routeProvider
