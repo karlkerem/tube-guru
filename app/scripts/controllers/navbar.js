@@ -11,7 +11,7 @@ angular.module('tubeGuruApp')
     });
 
 
-    $scope.cancelCounter = function() {
+    $scope.prepHome = function() {
       if(gameEngineService.data.counter) { $interval.cancel(gameEngineService.data.counter); }
     };
 

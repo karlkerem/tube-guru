@@ -182,17 +182,29 @@
 }
 
 
-.home-footer {
-  color: #fff;
-  bottom: 10px;
+.home-footer-links{
+  bottom: 20px;
   z-index: 1;
   position: fixed;
   left: 50%;
   margin-left: -70px;
   width: 140px;
+  color: #fff;
   text-shadow: 0 0 2px rgba(0,0,0,.8);
 }
 
+.share-buttons-footer * {
+  box-sizing: initial;
+}
+
+.share-buttons-footer {
+  bottom: 10px;
+  z-index: 1;
+  position: fixed;
+  left: 50%;
+  margin-left: -170px;
+  width: 340px;
+}
 
 
 /* Map container related styling */
