@@ -5,6 +5,14 @@
     <title>Tube Guru (Beta) - Learn London Underground Map & Stations</title>
     <meta name="description" content="Learn through a fun game where London tube stations are based">
     <meta name="viewport" content="width=device-width">
+    <meta property="og:title" content="Become London Underground Master" />
+    <meta property="og:site_name" content="Tube Guru (Beta)"/>
+    <meta property="og:url" content="http://tube-guru.co.uk" />
+    <meta property="og:description" content="Learn London tube stations through interactive game. Can you beat your friends and become a Tube Guru?" />
+    <meta property="fb:app_id" content="998898586799946" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content="http://tube-guru.co.uk/images/London_Underground-square.png" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
@@ -41,18 +49,6 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!--
-    <div id="fb-root"></div>
-    <script>
-      FB = null;
-      (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4&appId=998898586799946";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-    -->
     <!-- Add your site or application content here -->
     <div class="header" ng-controller="navbarCtrl">
       <div ng-hide="location=='/'" class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -76,6 +72,10 @@
               <li><a ng-click="prepHome()" href="#/">Home</a></li>
               <li ng-class="location==='/game' ? 'active' : ''"><a ng-href="#/game">Map</a></li>
               <li ng-class="location==='/about' ? 'active' : ''"><a ng-href="#/about">About</a></li>
+              <li class="sharing-navbar-container">
+                <div class="share-button" fb-like></div>
+                <div class="share-button twitter-share-button" tweet="tweetText"></div>
+              </li>
             </ul>
 
             <div class="navbar-game-info-container">

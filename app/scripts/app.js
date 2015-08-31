@@ -53,6 +53,7 @@ angular
     'CORRECT': 'correct',
     'WRONG': 'wrong'
   })
+  .constant('TWEET_TEXT', "I know the entire Tube map! Do you?")
   .run([
     '$rootScope', function ($rootScope) {
       $rootScope.facebookAppId = '998898586799946'; // set your facebook app id here

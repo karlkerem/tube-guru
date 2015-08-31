@@ -8,9 +8,10 @@
  * Controller of the tubeGuruApp
  */
 angular.module('tubeGuruApp')
-  .controller('MainCtrl', function ($scope, gameEngineService, stationDataService) {
+  .controller('MainCtrl', function ($scope, gameEngineService, stationDataService, TWEET_TEXT) {
     $scope.start = 'startButton';
 
+    $scope.tweetText = TWEET_TEXT;
     $scope.selectGame = function(gameId) {
       $scope.gameId = gameId;
 

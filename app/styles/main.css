@@ -193,22 +193,29 @@
   text-shadow: 0 0 2px rgba(0,0,0,.8);
 }
 
-.share-buttons-footer * {
-  box-sizing: initial;
-}
-
 .share-buttons-home-page{
   top: 20px;
   z-index: 3;
   position: fixed;
   left: 50%;
-  margin-left: -170px;
-  width: 340px;
+  margin-left: -120px;
+  width: 240px;
 }
 
-#u_0_3 {
-  color: #EFEFEF;
+.share-button {
+  display: inline;
 }
+.twitter-share-button {
+  top: 3px;
+  left: 8px;
+  position: relative;
+}
+
+.sharing-navbar-container {
+  padding-top: 11px;
+  padding-left: 10px;
+}
+
 
 /* Map container related styling */
 

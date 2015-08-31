@@ -7,7 +7,7 @@ header{
 	left: 0;
 	right: 0;
 	bottom: auto;
-	z-index: 500;	
+	z-index: 500;
 }
 header a{
 	color: #fff;
@@ -100,11 +100,6 @@ header li:hover a{
 	margin-bottom: 30px;
 	font-size: 22px;
 	color: #1c3f95;
-}
-.twitter-share-button{
-	position: absolute;
-	top: 24px;
-	right: 240px;
 }
 #screenshot{
 	display: none;
