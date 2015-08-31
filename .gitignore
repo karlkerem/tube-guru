@@ -1,6 +1,7 @@
 /node_modules
 /dist
 /.tmp
+/deploy.sh
 /.sass-cache
 /bower_components
 /.idea
