@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tubeGuruApp')
-  .controller('navbarCtrl', function ($scope, $location) {
+  .controller('navbarCtrl', function ($scope, $location, gameEngineService, $interval) {
 
 
     $scope.$watch(function(){return $location.path();}, function (newVal) {
@@ -10,6 +10,10 @@ angular.module('tubeGuruApp')
       }
     });
 
+
+    $scope.cancelCounter = function() {
+      if(gameEngineService.data.counter) { $interval.cancel(gameEngineService.data.counter); }
+    };
 
 
 

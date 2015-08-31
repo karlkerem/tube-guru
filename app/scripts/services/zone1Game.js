@@ -22,6 +22,7 @@ angular.module('tubeGuruApp')
       var keys = Object.keys(stationsObj);
       var randKey = keys[ keys.length * Math.random() << 0];
       var station = stationsObj[randKey];
+      station.key = randKey;
       delete stationsObj[randKey];
       return station;
     };

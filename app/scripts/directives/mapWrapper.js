@@ -18,6 +18,15 @@ angular.module('tubeGuruApp')
 
       scope.gameEngine = gameEngineService.data;
       scope.STATUS = STATUS;
+
+      scope.$watch(function(){return gameEngineService.data.previousQuestion;}, function(newVal) {
+        if(newVal) {
+          var elementKey = "#"+gameEngineService.data.previousQuestion.key+" strong";
+          angular.element(elementKey).html(gameEngineService.data.previousQuestion.html);
+        }
+      });
+
+
       /* Zooming */
       scope.zoom = 0.3;
 

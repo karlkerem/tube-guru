@@ -124,6 +124,7 @@
   overflow: hidden;
   position: relative;
   height: 300px;
+  z-index: 2;
 }
 
 .game-options {
@@ -132,7 +133,7 @@
   position: absolute;
   top: 20px;
   left: 0%;
-  padding-right: 15px;
+
   display: inline-table;
   width: 100%;
 }
@@ -169,7 +170,6 @@
   position: absolute;
   top: 20px;
   left: 0%;
-  padding-right: 15px;
   display: inline-table;
   width: 100%;
 }
@@ -180,6 +180,19 @@
 .game-options-second-page.ng-hide {
   left: 100%;
 }
+
+
+.home-footer {
+  color: #fff;
+  bottom: 10px;
+  z-index: 1;
+  position: fixed;
+  left: 50%;
+  margin-left: -70px;
+  width: 140px;
+  text-shadow: 0 0 2px rgba(0,0,0,.8);
+}
+
 
 
 /* Map container related styling */
@@ -349,4 +362,12 @@
 }
 .finished-btn {
   text-align: center;
+  margin-bottom: 18px;
+}
+
+
+/* About section */
+
+.about-panel {
+  margin-top: 20px;
 }

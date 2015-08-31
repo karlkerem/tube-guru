@@ -14,12 +14,17 @@ angular.module('tubeGuruApp')
     $scope.selectGame = function(gameId) {
       $scope.gameId = gameId;
 
-      stationDataService.getData(gameId, function(data) {
-        $scope.noOfStationsOptions = data.noOfStationsOptions;
-        $scope.gameName = data.instructions.firstLine;
-        $scope.start = 'secondPage';
-      });
+      if(gameId==='MapOnly') {
+        gameEngineService.selectGame(gameId, 0);
 
+      }
+      else {
+        stationDataService.getData(gameId, function(data) {
+          $scope.noOfStationsOptions = data.noOfStationsOptions;
+          $scope.gameName = data.instructions.firstLine;
+          $scope.start = 'secondPage';
+        });
+      }
     };
 
     $scope.selectNoOfStationsOptions = function(noOfStations) {

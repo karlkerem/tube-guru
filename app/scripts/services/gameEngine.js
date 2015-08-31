@@ -13,11 +13,11 @@ angular.module('tubeGuruApp')
     this.gameId = "";
     this.noOfTriesAllowed = 0;
     var game;
-    var counter = null;
 
     //this object is attached to scopes of various directives to monitor any changes
     this.data = {
       score: 0,
+      previousQuestion: null,
       currentQuestion: {},
       gameStatus: STATUS.MAP_ONLY,
       questionStatus: QUESTION_STATUS.WAITING,
@@ -26,7 +26,8 @@ angular.module('tubeGuruApp')
       currentQuestionNo: 0,
       pointsAvailableForCurrentQuestion: 0,
       noOfTries: 1,
-      timeLeft: 0 //in seconds
+      timeLeft: 0, //in seconds
+      counter: null
     };
 
     this.selectGame = function(gameId, noOfQuestions) {
@@ -48,7 +49,9 @@ angular.module('tubeGuruApp')
       gameEngine.noOfTriesAllowed = game.getNoOfTriesAllowed();
       gameEngine.data.noOfQuestions = noOfQuestions.number;
       gameEngine.data.noOfQuestionsTitle = noOfQuestions.title;
-      game.initLocalData();
+      if(gameEngine.data.gameStatus!==STATUS.MAP_ONLY) {
+        game.initLocalData();
+      }
     };
 
 
@@ -71,19 +74,19 @@ angular.module('tubeGuruApp')
         gameEngine.data.pointsAvailableForCurrentQuestion = game.getPointsPerQuestion();
         gameEngine.data.noOfTries = 1;
         gameEngine.data.currentQuestionNo++;
-        if(counter) { $interval.cancel(counter); }
+        if(gameEngine.data.counter) { $interval.cancel(gameEngine.data.counter); }
         runCounter();
       });
     };
 
     var finishGame = function() {
-      if(counter) { $interval.cancel(counter); }
+      if(gameEngine.data.counter) { $interval.cancel(gameEngine.data.counter); }
       gameEngine.data.gameStatus = STATUS.FINISHED;
     };
 
     var runCounter = function() {
       gameEngine.data.timeLeft = game.getTimePerQuestion();
-      counter = $interval(function() {
+      gameEngine.data.counter = $interval(function() {
         if(gameEngine.data.timeLeft>0) {
           gameEngine.data.timeLeft--;
         }
@@ -106,6 +109,7 @@ angular.module('tubeGuruApp')
         //correct answer
         gameEngine.data.questionStatus = QUESTION_STATUS.CORRECT;
         gameEngine.data.score = game.calcNewScore(gameEngine.data.score, gameEngine.data.noOfTries);
+        gameEngine.data.previousQuestion = gameEngine.data.currentQuestion;
         getQuestion();
         return;
       }
@@ -115,6 +119,7 @@ angular.module('tubeGuruApp')
         gameEngine.data.pointsAvailableForCurrentQuestion = game.getPointsAvailable(gameEngine.data.noOfTries+1);
         if(gameEngine.data.noOfTries===gameEngine.noOfTriesAllowed) {
           //reached max allowed tries, move on to next question
+          gameEngine.data.previousQuestion = gameEngine.data.currentQuestion;
           getQuestion();
           return;
         }

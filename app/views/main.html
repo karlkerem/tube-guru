@@ -18,11 +18,11 @@
     <div class="col-md-4"></div>
     <div class="col-md-4">
 
-      <div class="game-options-container">
+      <div ng-hide="start==='startButton'" class="game-options-container">
 
       <div ng-show="start==='firstPage'" class="game-options" ng-class="start==='secondPage' ? 'game-options-slide-left' : ''">
           <div class="list-group">
-            <a class="list-group-item" ng-click="selectGame('MapOnly')">
+            <a href="#game" class="list-group-item" ng-click="selectGame('MapOnly')">
               <h4 class="list-group-item-heading">Map Only</h4>
               <p class="list-group-item-text">Just show the map - no game nonsense please.</p>
             </a>
@@ -60,7 +60,9 @@
         </div>
 
       </div> <!-- game-options-container -->
-
+      <div class="home-footer">
+        | <a target="_blank" href="http://uk.linkedin.com/in/karlkerem">Karl Kerem</a> | <a href="#about">About</a> |
+      </div>
     </div>
     <div class="col-md-4"></div>
   </div>
