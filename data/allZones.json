@@ -538,7 +538,7 @@
       "html": "Wimbledon<ul class=\"rail-symbol\"><li class=\"hor\"></li><li class=\"hor2\"></li><li class=\"diag\"></li><li class=\"diag2\"></li><li class=\"diag3\"></li></ul><ul class=\"tram-symbol\"><li class=\"carriage\"></li><li class=\"door1\"></li><li class=\"door2\"></li><li class=\"window1\"></li><li class=\"window2\"></li><li class=\"window3\"></li><li class=\"window4\"></li><li class=\"conductor\"></li><li class=\"wheel1\"></li><li class=\"wheel2\"></li><li class=\"wheel3\"></li><li class=\"wheel4\"></li></ul>"
     },
     "dis014": {
-      "name": "Edgware Road",
+      "name": "Edgware Road (District)",
       "html": "Edgware Road"
     },
     "dis016": {
@@ -586,7 +586,7 @@
       "html": "<br>Cannon Street<ul class=\"rail-symbol\"><li class=\"hor\"></li><li class=\"hor2\"></li><li class=\"diag\"></li><li class=\"diag2\"></li><li class=\"diag3\"></li></ul><ul class=\"cross-symbol\"><li class=\"hor\"></li><li class=\"vert\"></li></ul>"
     },
     "dis030": {
-      "name": "Tower Hill  Fenchurch Street ",
+      "name": "Tower Hill",
       "html": "Tower<br>Hill<small class=\"rail\"><br>Fenchurch Street<ul class=\"rail-symbol\"><li class=\"hor\"></li><li class=\"hor2\"></li><li class=\"diag\"></li><li class=\"diag2\"></li><li class=\"diag3\"></li></ul></small><ul class=\"boat-symbol\"><li class=\"hull\"></li><li class=\"cabin\"></li><li class=\"top\"></li><li class=\"window\"></li><li class=\"window1\"></li><li class=\"window2\"></li><li class=\"window3\"></li><li class=\"wave\"></li><li class=\"wave2\"></li><li class=\"bwave\"></li><li class=\"bwave2\"></li><li class=\"bwave3\"></li></ul>"
     },
     "dis031": {
@@ -786,7 +786,7 @@
       "html": "<br>Paddington<ul class=\"rail-symbol\"><li class=\"hor\"></li><li class=\"hor2\"></li><li class=\"diag\"></li><li class=\"diag2\"></li><li class=\"diag3\"></li></ul>"
     },
     "bak015": {
-      "name": "Edgware Road",
+      "name": "Edgware Road (Bakerloo)",
       "html": "Edgware<br>Road"
     },
     "bak016": {
@@ -794,7 +794,7 @@
       "html": "<br>Marylebone<ul class=\"rail-symbol\"><li class=\"hor\"></li><li class=\"hor2\"></li><li class=\"diag\"></li><li class=\"diag2\"></li><li class=\"diag3\"></li></ul>"
     },
     "bak018": {
-      "name": "",
+      "name": "Regent's Park",
       "html": "Regent's Park"
     },
     "bak019": {
