@@ -11,7 +11,10 @@ angular.module('tubeGuruApp')
         scope.gameEngine = gameEngineService.data;
 
         scope.$watch(function(){return gameEngineService.data.currentQuestionNo;}, function() {
-          var newWidth = ((gameEngineService.data.currentQuestionNo)*100)/gameEngineService.data.noOfQuestions;
+         var newWidth = 0;
+          if(gameEngineService.data.noOfQuestions!==0) {
+            newWidth = ((gameEngineService.data.currentQuestionNo)*100)/gameEngineService.data.noOfQuestions;
+          }
           angular.element("#question-progress-bar").css({ "width": newWidth+"%"});
         });
 
