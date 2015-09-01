@@ -31,7 +31,7 @@ angular.module('tubeGuruApp')
     };
 
     this.selectGame = function(gameId, noOfQuestions) {
-      resetVariables();
+      gameEngine.resetVariables();
       switch(gameId) {
         case "MapOnly":
           gameEngine.data.gameStatus = STATUS.MAP_ONLY;
@@ -55,7 +55,7 @@ angular.module('tubeGuruApp')
     };
 
 
-    var resetVariables = function() {
+    this.resetVariables = function() {
       gameEngine.data.score = 0;
       gameEngine.data.noOfQuestions = 0;
       gameEngine.data.currentQuestionNo = 0;
@@ -127,6 +127,5 @@ angular.module('tubeGuruApp')
       }
       gameEngine.data.noOfTries++;
     };
-
 
   });

@@ -59,7 +59,7 @@ angular.module('tubeGuruApp')
       scope.clickStation = function(event) {
         var id = mapClicksService.getStationId(event);
 
-        if(id && gameEngineService.data.currentQuestion.name) {
+        if(id && gameEngineService.data.gameStatus===STATUS.WAITING_FOR_ANSWER) {
           stationDataService.findStation('allZones', id, function(stationData) {
             gameEngineService.checkAnswer(stationData);
           });
