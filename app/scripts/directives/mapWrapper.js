@@ -28,31 +28,52 @@ angular.module('tubeGuruApp')
 
 
       /* Zooming */
-      scope.zoom = 0.3;
+      var panzoom = $("#scaled-map-frame").panzoom({
+        startTransform: 'matrix(0.5, 0, 0, 0.5, -689, -1025)',
+        minScale: 0.3
+      });
+
+
+      panzoom.parent().on('mousewheel.focal', function( e ) {
+        e.preventDefault();
+        var delta = e.delta || e.originalEvent.wheelDelta;
+        var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+        panzoom.panzoom('zoom', zoomOut, {
+          increment: 0.1,
+          animate: false,
+          focal: e
+        });
+      });
 
       scope.zoomIn = function(){
-        scope.zoom = scope.zoom+0.05;
-       changeZoom(scope.zoom);
+        panzoom.panzoom("zoom", false, {
+          focal: {
+            increment: 0.3,
+            clientX: 1025,
+            clientY: 689
+          }
+        });
 
       };
-      scope.zoomInDblClick = function() {
-        //angular.element("#scaled-map-frame").css("transform-origin", event.pageX+"px "+event.pageY+"px");
-        scope.zoomIn();
+
+
+      scope.zoomInDblClick = function(e) {
+        panzoom.panzoom("zoom", false, {
+          increment: 0.3,
+          focal: e
+        });
       };
 
       scope.zoomOut = function() {
-        scope.zoom = scope.zoom-0.05;
-        changeZoom(scope.zoom);
+        panzoom.panzoom("zoom", true, {
+          focal: {
+            increment: 0.3,
+            clientX: 1025,
+            clientY: 689
+          }
+        });
       };
 
-      function changeZoom(zoom) {
-
-        /*angular.element("#scaled-map-frame").css("zoom", zoom);*/
-        angular.element("#scaled-map-frame").css("-moz-transform", "scale("+zoom+")");
-        angular.element("#scaled-map-frame").css("-o-transform", "scale("+zoom+")");
-        angular.element("#scaled-map-frame").css("-webkit-transform", "scale("+zoom+")");
-
-      }
 
 
       /* Clicking on stations */
