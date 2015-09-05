@@ -8,7 +8,7 @@
  * Controller of the tubeGuruApp
  */
 angular.module('tubeGuruApp')
-  .controller('MainCtrl', function ($scope, gameEngineService, stationDataService, TWEET_TEXT) {
+  .controller('MainCtrl', function ($scope, gameEngineService, stationDataService, TWEET_TEXT, $location) {
     $scope.start = 'startButton';
 
     $scope.tweetText = TWEET_TEXT;
@@ -17,7 +17,7 @@ angular.module('tubeGuruApp')
 
       if(gameId==='MapOnly') {
         gameEngineService.selectGame(gameId, 0);
-
+        $location.url('/game');
       }
       else {
         stationDataService.getData(gameId, function(data) {
@@ -30,6 +30,7 @@ angular.module('tubeGuruApp')
 
     $scope.selectNoOfStationsOptions = function(noOfStations) {
       gameEngineService.selectGame($scope.gameId, noOfStations);
+      $location.url('/game');
     };
 
 

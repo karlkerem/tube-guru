@@ -36,6 +36,10 @@
   padding-top: 50px;
 }
 
+.navbar-nav a {
+  cursor: pointer;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -97,7 +101,6 @@
 }
 
 .home-welcome-message {
-  height: 134px;
   overflow: hidden;
   transition: all ease-out 0.3s;
 }

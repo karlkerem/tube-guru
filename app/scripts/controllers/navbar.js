@@ -21,6 +21,7 @@ angular.module('tubeGuruApp')
 
     $scope.prepHome = function() {
       if(gameEngineService.data.counter) { $interval.cancel(gameEngineService.data.counter); }
+      $location.url("/");
     };
 
 

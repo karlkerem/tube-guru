@@ -26,7 +26,7 @@
 
       <div ng-show="start==='firstPage'" class="game-options" ng-class="start==='secondPage' ? 'game-options-slide-left' : ''">
           <div class="list-group">
-            <a href="#game" class="list-group-item" ng-click="selectGame('MapOnly')">
+            <a class="list-group-item" ng-click="selectGame('MapOnly')">
               <h4 class="list-group-item-heading">Map Only</h4>
               <p class="list-group-item-text">Just show the map - no game nonsense please.</p>
             </a>
@@ -53,7 +53,6 @@
             </a>
 
             <a ng-repeat="option in noOfStationsOptions"
-               href="#game"
                ng-click="selectNoOfStationsOptions(option)"
                class="list-group-item">
               <p class="list-group-item-text second-page-item-text">{{option.title}}</p>

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('tubeGuruApp')
-  .controller('finishedModalCtrl', function ($scope, $modalInstance, gameEngine, gameName) {
+  .controller('finishedModalCtrl', function ($scope, $modalInstance, gameEngine, gameName, $location) {
 
 
     $scope.gameName = gameName;
@@ -9,6 +9,8 @@ angular.module('tubeGuruApp')
 
     $scope.close = function() {
       $modalInstance.close();
+      $location.url('/');
+
     };
 
   });
