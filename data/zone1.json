@@ -28,7 +28,8 @@
   "stations": {
     "met022": {
       "name": "Aldgate",
-      "html": "Aldgate"
+      "html": "Aldgate",
+      "htmlDestId": "met022"
     },
     "dis031": {
       "name": "Aldgate East",
