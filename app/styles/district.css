@@ -3,6 +3,9 @@
     background-color: #00853e;
     z-index: 10;
 }
+#district .station{
+  z-index: 11;
+}
 #dis001{
 	top: 1705px;
 	left: 703px;
@@ -92,7 +95,7 @@
 	top: 1248px;
 	left: 1395px;
 }
-#dis016 strong{	
+#dis016 strong{
 	left: 27px;
 }
 #dis017{

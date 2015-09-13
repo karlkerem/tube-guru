@@ -3,6 +3,11 @@
     background-color: #1c3f95;
     z-index: 10;
 }
+
+#piccadilly .station{
+  z-index: 11;
+}
+
 #pic001{
 	top: 395px;
 	left: 50px;

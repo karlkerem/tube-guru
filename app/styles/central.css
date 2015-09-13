@@ -1,8 +1,12 @@
 #central .route,
 #central .station{
-    background-color: #ee2e24; 
+    background-color: #ee2e24;
     z-index: 10;
 }
+#central .station{
+  z-index: 11;
+}
+
 #cen001{
 	top: 315px;
 	left: 376px;
@@ -161,6 +165,7 @@
 #cen025{
 	top: 1378px;
 	left: 2342px;
+  z-index: 12!important;
 }
 #cen026{
 	top: 1421px;

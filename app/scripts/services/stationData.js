@@ -15,10 +15,10 @@ angular.module('tubeGuruApp')
         }).success(callback);
     };
 
-    this.findStation = function(gameId, stationId, callback){
-      that.getData(gameId, function(data) {
-        if(data.stations[stationId]) {
-          callback(data.stations[stationId]);
+    this.findStation = function(stationId, callback){
+      that.getData('data', function(data) {
+        if(data.map_stations[stationId]) {
+          callback(data.map_stations[stationId]);
         }
         else {
           callback("");

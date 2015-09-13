@@ -49,6 +49,7 @@ module.exports = function(config) {
       'bower_components/angulartics-google-analytics/dist/angulartics-google-analytics.min.js',
       'bower_components/angulike/angulike.js',
       'bower_components/jquery.panzoom/dist/jquery.panzoom.js',
+      'bower_components/lodash/lodash.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

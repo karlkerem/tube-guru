@@ -3,6 +3,10 @@
     background-color: #009ddc;
     z-index: 10;
 }
+#victoria .station{
+  z-index: 11;
+}
+
 #vic001{
 	top: 590px;
 	left: 3203px;

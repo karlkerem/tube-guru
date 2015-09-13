@@ -1,6 +1,10 @@
 #metropolitan .route,
 #metropolitan .station{
     background-color: #98005d;
+    z-index: 10;
+}
+#metropolitan .station{
+  z-index: 12;
 }
 #met001{
 	left: 42px;
@@ -61,7 +65,7 @@
 #met008{
 	left: 571px;
 	top: 263px;
-	z-index: 11 !important;
+	z-index: 12 !important;
 }
 #met008 strong{
 	padding-left: 15px;

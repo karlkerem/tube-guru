@@ -1,7 +1,10 @@
 #hammersmith-and-city .route,
 #hammersmith-and-city .station{
-    background-color: #f386a1; 
+    background-color: #f386a1;
     z-index: 10;
+}
+#hammersmith-and-city .station{
+  z-index: 11;
 }
 #ham001{
 	top: 1579px;

@@ -3,6 +3,10 @@
     background-color: #000;
     z-index: 10;
 }
+#northern .station{
+  z-index: 11;
+}
+
 #nor001{
 	top: 114px;
 	left: 2245px;

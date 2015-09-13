@@ -3,6 +3,9 @@
     background-color: #959ca1;
     z-index: 10;
 }
+#jubilee .station{
+  z-index: 11;
+}
 #jub001{
 	top: 350px;
 	left: 1270px;

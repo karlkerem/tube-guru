@@ -6,7 +6,7 @@
 angular.module('tubeGuruApp')
   .service('zone1Game', function(stationDataService) {
 
-    var dataFileName = 'zone1';
+    var dataFileName = 'data';
     var noOfTriesAllowed = 3;
     var timePerQuestion = 20; //in seconds
     var scoringMatrix = {
@@ -15,16 +15,33 @@ angular.module('tubeGuruApp')
       3: 4
     };
 
-    var localData = null;
+    var questionsArray = null;
 
 
-    var getRandomStation = function (stationsObj) {
-      var keys = Object.keys(stationsObj);
-      var randKey = keys[ keys.length * Math.random() << 0];
-      var station = stationsObj[randKey];
-      station.key = randKey;
-      delete stationsObj[randKey];
+    var getRandomStation = function (questionsArray) {
+      var randKey = _.random(questionsArray.length-1);
+      var station = questionsArray[randKey];
+      _.pullAt(questionsArray, randKey);
       return station;
+    };
+
+    var prepareZone1Questions = function(data) {
+      var zone1Stations = [];
+
+      data.tfl_stations.forEach(function(station) {
+        if(_.includes(station.properties.zones, "1")) {
+
+          var stationObject = _.find(data.map_stations, function(map_station) {
+            return (map_station.name===station.properties.name && map_station.html !== "");
+          });
+
+          zone1Stations.push(stationObject);
+          console.log(stationObject.name);
+        }
+      });
+
+      return zone1Stations;
+
     };
 
 
@@ -33,13 +50,14 @@ angular.module('tubeGuruApp')
 
     this.initLocalData = function(callback) {
       stationDataService.getData(dataFileName, function(data) {
-        localData = data.stations;
-        if(callback){ callback(data.stations); }
+        var readyQuestionsArray = prepareZone1Questions(data);
+        questionsArray = readyQuestionsArray;
+        if(callback){ callback(readyQuestionsArray); }
       });
     };
 
     this.getQuestion = function(callback) {
-        callback(getRandomStation(localData));
+        callback(getRandomStation(questionsArray));
     };
 
 
