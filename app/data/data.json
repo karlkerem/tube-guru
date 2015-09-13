@@ -11613,6 +11613,26 @@
       "name": "Edgware Road (District)",
       "html": "",
       "key": "lin004"
+    },
+    "lin017": {
+      "name": "Bank",
+      "html": "",
+      "key": "lin017"
+    },
+    "lin029": {
+      "name": "Shadwell",
+      "html": "",
+      "key": "lin029"
+    },
+    "lin012": {
+      "name": "Bow Road",
+      "html": "",
+      "key": "lin012"
+    },
+    "lin025": {
+      "name": "Highbury & Islington",
+      "html": "",
+      "key": "lin025"
     }
   }
 }
