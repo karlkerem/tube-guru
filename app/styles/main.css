@@ -136,7 +136,7 @@
 .game-options-container {
   overflow: hidden;
   position: relative;
-  min-height: 345px;
+  min-height: 365px;
   z-index: 2;
 }
 
@@ -159,7 +159,7 @@
   left: -100%;
 }
 
-.game-options a {
+.game-options a, .game-options-second-page a {
   cursor: pointer;
 }
 
@@ -194,6 +194,15 @@
   left: 100%;
 }
 
+.game-options-second-page .list-group {
+  margin-bottom: 10px;
+}
+
+.back-button {
+  text-align: center;
+  cursor: pointer;
+  margin-left: 17px;
+}
 
 .home-footer-links{
   bottom: 20px;
