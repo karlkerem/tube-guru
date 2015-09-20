@@ -21,10 +21,16 @@ angular.module('tubeGuruApp')
 
       scope.gameEngine = gameEngineService.data;
 
-      stationDataService.getData(gameEngineService.gameId, function(data) {
-        scope.firstLineInstructions = data.instructions.firstLine;
-        scope.secondLineInstructions = data.instructions.secondLine;
-      });
+      var showInstructions = function() {
+        if(gameEngineService.data.zones) {
+          stationDataService.getData(gameEngineService.gameId, function(data) {
+            scope.firstLineInstructions = createZoneSelectionString(gameEngineService.data.zones);
+            scope.secondLineInstructions = data.instructions.secondLine;
+          });
+        }
+      };
+      showInstructions();
+
 
 
       scope.$watch(function(){return gameEngineService.data.questionStatus;}, function (newVal) {
@@ -57,6 +63,29 @@ angular.module('tubeGuruApp')
           }
         });
       };
+
+      var createZoneSelectionString = function(zones) {
+        if(zones.length===1) {
+          return "Zone "+zones[0].number;
+        }
+        else if(zones.length===8) {
+          return "All Zones";
+        }
+
+        var finalText = "Zones ";
+        for(var i=0; i<zones.length; i++) {
+          finalText += zones[i].number;
+          if(zones[i+2]) {
+            finalText += ", ";
+          }
+          else if(zones[i+1]) {
+            finalText += " & ";
+
+          }
+        }
+        return finalText;
+      };
+
 
 
     }

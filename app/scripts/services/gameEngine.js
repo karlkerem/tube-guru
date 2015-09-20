@@ -7,7 +7,7 @@
  */
 
 angular.module('tubeGuruApp')
-  .service('gameEngineService', function(zone1Game, $interval, STATUS, QUESTION_STATUS) {
+  .service('gameEngineService', function(zonesGame, $interval, STATUS, QUESTION_STATUS) {
 
     var gameEngine = this;
     this.gameId = "";
@@ -26,19 +26,20 @@ angular.module('tubeGuruApp')
       currentQuestionNo: 0,
       pointsAvailableForCurrentQuestion: 0,
       noOfTries: 1,
+      zones: null,
       timeLeft: 0, //in seconds
       counter: null
     };
 
-    this.selectGame = function(gameId, noOfQuestions) {
+    this.selectGame = function(gameId, noOfQuestions, zones) {
       gameEngine.resetVariables();
       switch(gameId) {
         case "MapOnly":
           gameEngine.data.gameStatus = STATUS.MAP_ONLY;
           return;
-        case "zone1":
+        case "zones":
           gameEngine.data.gameStatus = STATUS.READY;
-          game = zone1Game;
+          game = zonesGame;
           gameEngine.gameId = gameId;
           break;
 
@@ -49,8 +50,9 @@ angular.module('tubeGuruApp')
       gameEngine.noOfTriesAllowed = game.getNoOfTriesAllowed();
       gameEngine.data.noOfQuestions = noOfQuestions.number;
       gameEngine.data.noOfQuestionsTitle = noOfQuestions.title;
+      gameEngine.data.zones = zones;
       if(gameEngine.data.gameStatus!==STATUS.MAP_ONLY) {
-        game.initLocalData();
+        game.initLocalData(zones);
       }
     };
 

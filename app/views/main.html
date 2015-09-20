@@ -8,7 +8,7 @@
         <div class="share-button twitter-share-button" tweet="tweetText"></div>
       </div>
       <div class="home-welcome">
-        <img class="underground-main-logo" src="images/underground.png" title="Underground Logo">
+        <img class="underground-main-logo" ng-show="start==='startButton'" src="images/underground.png" title="Underground Logo">
         <div class="home-welcome-message" ng-show="start==='startButton'">
           <h1>Tube Guru</h1>
           <p>It is time to impress your friends and finally learn where all those odd and funny Underground (and Overground) stations are.</p>
@@ -26,17 +26,17 @@
 
       <div ng-show="start==='firstPage'" class="game-options" ng-class="start==='secondPage' ? 'game-options-slide-left' : ''">
           <div class="list-group">
+            <a class="list-group-item list-group-item-title">
+              <h3 class="list-group-item-heading">Tube-Guru</h3>
+            </a>
+
             <a class="list-group-item" ng-click="selectGame('MapOnly')">
               <h4 class="list-group-item-heading">Map Only</h4>
               <p class="list-group-item-text">Just show the map - no game nonsense please.</p>
             </a>
-            <a ng-click="selectGame('zone1')" class="list-group-item">
-              <h4 class="list-group-item-heading">Zone 1</h4>
-              <p class="list-group-item-text">Prove you know all the stations in central London.</p>
-            </a>
-            <a class="list-group-item disabled">
-              <h4 class="list-group-item-heading">All Zones</h4>
-              <p class="list-group-item-text">Ready to take the ultimate challenge? Tackle the entire London tube map!</p>
+            <a ng-click="selectGame('zones')" class="list-group-item">
+              <h4 class="list-group-item-heading">Zones</h4>
+              <p class="list-group-item-text">Tackle the map by zones.</p>
             </a>
             <a class="list-group-item disabled">
               <h4 class="list-group-item-heading">Line by Line</h4>
@@ -45,7 +45,30 @@
           </div>
         </div>
 
-        <div ng-show="start==='secondPage'" class="game-options-second-page">
+        <div ng-show="start==='secondPage'" class="game-options-other-page" ng-class="start==='thirdPage' ? 'game-options-slide-left' : ''">
+          <div class="list-group">
+            <a class="list-group-item list-group-item-title">
+              <h4 class="list-group-item-heading">{{gameName}}</h4>
+              <p class="list-group-item-text">Select one or more zone</p>
+              <button ng-show="areAnyZonesSelected()" ng-click="continueFromZonesPage()" class="btn btn-default btn-zone-continue">Continue >></button>
+            </a>
+
+            <a ng-repeat="zone in zones" ng-click="zone.selected ? zone.selected=false : zone.selected=true"
+               class="list-group-item zone" ng-class="zone.selected ? 'selected' : ''">
+              <p class="list-group-item-text second-page-item-text">Zone {{zone.number}}</p>
+            </a>
+
+            <a ng-click="start='firstPage'"
+               class="list-group-item">
+              <p class="list-group-item-text second-page-item-text">&lt;&lt; Back</p>
+            </a>
+          </div> <!-- end of list-group -->
+
+        </div>
+
+
+
+        <div ng-show="start==='thirdPage'" class="game-options-other-page">
           <div class="list-group">
             <a class="list-group-item list-group-item-title">
               <h4 class="list-group-item-heading">{{gameName}}</h4>
@@ -59,9 +82,9 @@
 
             </a>
 
-            <a ng-click="start='firstPage'"
+            <a ng-click="start='secondPage'"
                class="list-group-item">
-              <p class="list-group-item-text second-page-item-text"><< Back</p>
+              <p class="list-group-item-text second-page-item-text">&lt; Back</p>
             </a>
           </div> <!-- end of list-group -->
 

@@ -4,7 +4,7 @@
  */
 
 angular.module('tubeGuruApp')
-  .service('zone1Game', function(stationDataService) {
+  .service('zonesGame', function(stationDataService) {
 
     var dataFileName = 'data';
     var noOfTriesAllowed = 3;
@@ -25,32 +25,43 @@ angular.module('tubeGuruApp')
       return station;
     };
 
-    var prepareZone1Questions = function(data) {
-      var zone1Stations = [];
-
+    var prepareQuestions = function(data, zones) {
+      var selectedStations = [];
+      var missingStations = [];
       data.tfl_stations.forEach(function(station) {
-        if(_.includes(station.properties.zones, "1")) {
-
+        if(isStationInZone(station, zones)) {
           var stationObject = _.find(data.map_stations, function(map_station) {
             return (map_station.name===station.properties.name && map_station.html !== "");
           });
 
-          zone1Stations.push(stationObject);
-          console.log(stationObject.name);
+          if(stationObject) {
+            selectedStations.push(stationObject);
+          }
+          else {
+            missingStations.push(station.properties.name);
+          }
         }
       });
+      console.log(selectedStations);
+      return selectedStations;
+    };
 
-      return zone1Stations;
-
+    var isStationInZone = function(station, zones) {
+      for(var i=0; i<zones.length; i++) {
+        if(_.includes(station.properties.zones, zones[i].number)) {
+          return true;
+        }
+      }
+      return false;
     };
 
 
 
     /* Mandatory API functions for all games */
 
-    this.initLocalData = function(callback) {
+    this.initLocalData = function(zones, callback) {
       stationDataService.getData(dataFileName, function(data) {
-        var readyQuestionsArray = prepareZone1Questions(data);
+        var readyQuestionsArray = prepareQuestions(data, zones);
         questionsArray = readyQuestionsArray;
         if(callback){ callback(readyQuestionsArray); }
       });

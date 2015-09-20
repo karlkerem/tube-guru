@@ -136,7 +136,8 @@
 .game-options-container {
   overflow: hidden;
   position: relative;
-  min-height: 365px;
+  min-height: 480px;
+  margin-top: 40px;
   z-index: 2;
 }
 
@@ -156,29 +157,37 @@
 }
 
 .game-options-slide-left {
-  left: -100%;
+  left: -100%!important;
 }
 
-.game-options a, .game-options-second-page a {
+.game-options a, .game-options-other-page a {
   cursor: pointer;
 }
 
-.game-options-second-page .list-group-item-title,
-.game-options-second-page .list-group-item-title:hover{
+.game-options-other-page .list-group-item-title,
+.game-options-other-page .list-group-item-title:hover,
+.game-options .list-group-item-title,
+.game-options .list-group-item-title:hover {
   cursor: auto;
   color: #ffffff;
   background-color: #0723A5;
 }
 
-.game-options-second-page .list-group-item-title .list-group-item-heading {
+.game-options-other-page .list-group-item.zone.selected{
+  background-color: #cfecff;
+}
+
+.game-options-other-page .list-group-item-title .list-group-item-heading,
+.game-options .list-group-item-title .list-group-item-heading
+{
   color: #ffffff;
 }
 
-.game-options-second-page .second-page-item-text {
+.game-options-other-page .second-page-item-text {
   font-size: 18px;
 }
 
-.game-options-second-page {
+.game-options-other-page {
   transition: all ease-out 0.3s;
   position: absolute;
   top: 20px;
@@ -187,15 +196,21 @@
   width: 100%;
 }
 
-.game-options-second-page.ng-hide-remove {
+.game-options-other-page.ng-hide-remove {
   display: inline-table!important;
 }
-.game-options-second-page.ng-hide {
+.game-options-other-page.ng-hide {
   left: 100%;
 }
 
-.game-options-second-page .list-group {
+.game-options-other-page .list-group {
   margin-bottom: 10px;
+}
+
+.btn-zone-continue {
+  position: absolute;
+  top: 13px;
+  right: 10px;
 }
 
 .back-button {
@@ -331,6 +346,11 @@
   float: left;
 }
 
+.welcome-left h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 .welcome-right {
   float: right;
   height: 100%;
@@ -451,7 +471,8 @@
     box-shadow: none;
   }
   .welcome-left h3 {
-    margin-top: 10px;
+    margin-top: 0px;
+    margin-bottom: 2px;
     font-size: 18px;
   }
 
