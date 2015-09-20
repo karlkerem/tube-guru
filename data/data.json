@@ -6677,31 +6677,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "940GZZLUWSP",
-        "name": "Westbourne Park",
-        "tfl_intid": 754,
-        "tfl_statid": 292,
-        "lines": [
-          {
-            "name": "Circle",
-            "opened": 2009
-          },
-          {"name": "Hammersmith & City"}
-        ],
-        "labelX": -30,
-        "zones": ["2"]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.201508500000022,
-          51.5209487
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": "940GZZLUWTA",
         "name": "West Acton",
         "tfl_intid": 753,
@@ -7920,7 +7895,12 @@
         "night": true,
         "lines": [
           {"name": "District"},
-          {"name": "Piccadilly"}
+          {"name": "Piccadilly"},
+          {
+            "name": "Circle",
+            "opened": 2009
+          },
+          {"name": "Hammersmith & City"}
         ],
         "labelX": 30,
         "zones": ["2"]
@@ -8517,31 +8497,6 @@
     {
       "type": "Feature",
       "properties": {
-        "id": "940GZZLUHSC",
-        "name": "Hammersmith (H&C)",
-        "tfl_intid": 773,
-        "tfl_statid": 304,
-        "lines": [
-          {
-            "name": "Circle",
-            "opened": 2009
-          },
-          {"name": "Hammersmith & City"}
-        ],
-        "labelX": 30,
-        "zones": ["2"]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.225082878139626,
-          51.49409630609944
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "id": "910GBTHNLGR",
         "name": "Bethnal Green (NR)",
         "tfl_intid": 6961,
@@ -9068,29 +9023,6 @@
         "coordinates": [
           0.2202669,
           51.568587
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "id": "910GBATRSPK",
-        "tfl_intid": 5420,
-        "name": "Battersea Park",
-        "lines": [
-          {
-            "name": "London Overground",
-            "opened": 2012
-          }
-        ],
-        "labelX": -30,
-        "zones": ["2"]
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -0.1474441,
-          51.47804
         ]
       }
     },
@@ -9941,7 +9873,7 @@
     },
     "dis004": {
       "name": "Hammersmith",
-      "html": "<li class=\"wheel\"></li><li class=\"legs\"></li><li class=\"arms\"></li><li class=\"thighs\"></li><li class=\"back\"></li>",
+      "html": "",
       "key": "dis004"
     },
     "dis005": {
@@ -10206,7 +10138,7 @@
     },
     "cir024": {
       "name": "Hammersmith",
-      "html": "<li class=\"wheel\"></li><li class=\"legs\"></li><li class=\"arms\"></li><li class=\"thighs\"></li><li class=\"back\"></li>",
+      "html": "",
       "key": "cir024"
     },
     "ham001": {
@@ -10496,7 +10428,7 @@
     },
     "nor022": {
       "name": "Euston",
-      "html": "<li class=\"wheel\"></li><li class=\"legs\"></li><li class=\"arms\"></li><li class=\"thighs\"></li><li class=\"back\"></li>",
+      "html": "",
       "key": "nor022"
     },
     "nor023": {
