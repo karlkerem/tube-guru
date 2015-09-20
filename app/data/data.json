@@ -10496,7 +10496,7 @@
     },
     "nor022": {
       "name": "Euston",
-      "html": "<li class=\"wheel\"></li><li class=\"legs\"></li><li class=\"arms\"></li><li class=\"thighs\"></li><li class=\"back\"></li>",
+      "html": "",
       "key": "nor022"
     },
     "nor023": {
