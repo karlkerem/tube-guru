@@ -389,7 +389,7 @@
   background-color: #5cb85c;
 }
 
-.time-display, .tries-display, .points-display {
+.time-display, .tries-display, .points-display, .give-up-button {
   position: absolute;
   color: #777;
 }
@@ -409,7 +409,14 @@
   bottom: 3px;
 }
 
+.give-up-button {
+  right: 3px;
+  bottom: 3px;
+}
 
+.give-up-button .btn-sm {
+  padding: 2px 6px;
+}
 /* finished modal */
 
 .finished-title {

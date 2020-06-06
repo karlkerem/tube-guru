@@ -31,6 +31,12 @@ angular.module('tubeGuruApp')
       };
       showInstructions();
 
+      scope.giveUpQuestion = function(){
+        scope.$emit("User-Gives-Up", gameEngineService.data.currentQuestion);
+        $timeout(function() {
+          gameEngineService.giveUpQuestion();
+        }, 1000);
+      };
 
 
       scope.$watch(function(){return gameEngineService.data.questionStatus;}, function (newVal) {

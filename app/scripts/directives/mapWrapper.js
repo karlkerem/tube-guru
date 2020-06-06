@@ -4,7 +4,7 @@
  */
 
 angular.module('tubeGuruApp')
-  .directive('mapWrapper', function(mapClicksService, stationDataService, gameEngineService, STATUS) {
+  .directive('mapWrapper', function(mapClicksService, stationDataService, gameEngineService, STATUS, $window) {
 
 
     function link(scope) {
@@ -75,6 +75,28 @@ angular.module('tubeGuruApp')
       };
 
 
+      scope.$on("User-Gives-Up", function(event, question) {
+        console.log(question);
+        var el = angular.element("#"+question.key);
+        var css = window.getComputedStyle(el[0]);
+        var top = parseInt(css.top);
+        var left = parseInt(css.left);
+        var matrix = panzoom.panzoom("getMatrix");
+        var scale = matrix[0];
+        var currentTop = matrix[5];
+        var currentLeft = matrix[4];
+        var viewPortWidth = $window.innerWidth;
+        var viewPortHeight = $window.innerHeight;
+        console.log(left +" "+ top +" "+ scale);
+        console.log(currentLeft +" "+ currentTop +" "+ scale);
+        console.log($window.innerWidth/2 +" "+ $window.innerHeight/2 +" "+ scale);
+
+        panzoom.panzoom("setMatrix",
+          [0.7, 0, 0, 0.7, (-left+($window.innerWidth/2))*0.7, (-top-400+($window.innerHeight/2))*0.7],
+          {animate: true}
+        );
+        //panzoom.panzoom("pan", -left*scale, -top*scale, { relative: false });
+      });
 
       /* Clicking on stations */
       scope.clickStation = function(event) {

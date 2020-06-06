@@ -106,6 +106,10 @@ angular.module('tubeGuruApp')
     };
 
 
+    this.giveUpQuestion = function() {
+      gameEngine.data.previousQuestion = gameEngine.data.currentQuestion;
+      getQuestion();
+    };
 
     this.checkAnswer = function(clickedStationData) {
       if(clickedStationData.name === gameEngine.data.currentQuestion.name) {

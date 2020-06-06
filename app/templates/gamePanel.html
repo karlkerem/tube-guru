@@ -28,6 +28,10 @@
   <points-display></points-display>
 </div>
 
+<div ng-show="gameEngine.gameStatus===STATUS.WAITING_FOR_ANSWER" class="give-up-button">
+  <button class="btn btn-sm btn-default" ng-click="giveUpQuestion()">Give Up</button>
+</div>
+
 <div ng-show="gameEngine.questionStatus===QUESTION_STATUS.WRONG" class="answer-message answer-message-wrong ng-cloak">
   Wrong Answer!
 </div>
